@@ -4,6 +4,7 @@
   "description": "A JavaScript library for copying text, images, videos, links, and code to the clipboard with advanced notification and history management features.",
   "main": "copyShare.js",
   "type": "module",
+  "types": "copy-share.d.ts",
   "scripts": {
     "test": "node test.js"
   },
