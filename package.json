@@ -13,6 +13,22 @@
   },
   "author": "Adam-Elmi",
   "license": "MIT",
+  "keywords": [
+    "copy",
+    "clipboard",
+    "copy-to-clipboard",
+    "share",
+    "copy-share",
+    "utilities",
+    "JavaScript",
+    "library",
+    "frontend",
+    "copy-text",
+    "copy-image",
+    "copy-code",
+    "copy-link",
+    "clipboard-manager"
+  ],
   "dependencies": {
     "jsdom": "^25.0.0"
   }
