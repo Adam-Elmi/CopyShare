@@ -7,6 +7,10 @@
   "scripts": {
     "test": "node test.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Adam-Elmi/CopyShare.git"
+  },
   "author": "Adam-Elmi",
   "license": "MIT",
   "dependencies": {
