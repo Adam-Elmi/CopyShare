@@ -1,0 +1,15 @@
+{
+  "name": "copy-share",
+  "version": "1.0.0",
+  "description": "A JavaScript library for copying text, images, videos, links, and code to the clipboard with advanced notification and history management features.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Adam-Elmi",
+  "license": "MIT",
+  "dependencies": {
+    "jsdom": "^25.0.0"
+  }
+}
