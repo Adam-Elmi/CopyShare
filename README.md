@@ -26,7 +26,7 @@ npm install copy-share
 
 ```html
 <script type="module">
-   import { copyText } from 'https://cdn.jsdelivr.net/npm/copy-share@1.1.0/copyShare.min.js';
+   import { copyText } from 'https://cdn.jsdelivr.net/npm/copy-share/copyShare.min.js';
         
             document.getElementById('btn').onclick = () => {
                 copyText(document.getElementById('text').value);
