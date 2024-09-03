@@ -124,55 +124,53 @@ class CopyShare {
     async copyImage(imageUrl) {
         if (!imageUrl) {
             console.error("The image URL parameter is missing or empty.");
-            this.notify('The image URL parameter is missing or empty.!', 'error');
             return;
         }
+    
         const mimeType = "image/png";
-        const sanitizedUrl = this.sanitizeUrl(imageUrl);
+        const sanitizedUrl = imageUrl;
+    
         if (navigator.clipboard) {
-            this.history.push({ type: mimeType, content: sanitizedUrl });
             try {
                 const response = await fetch(sanitizedUrl);
                 if (!response.ok) throw new Error("Network response was not ok");
+    
                 const blob = await response.blob();
                 const img = document.createElement("img");
                 img.src = URL.createObjectURL(blob);
-                
-                await new Promise(resolve => {
-                    img.onload = () => {
+    
+                await new Promise((resolve, reject) => {
+                    img.onload = async () => {
                         const canvas = document.createElement("canvas");
                         canvas.width = img.width;
                         canvas.height = img.height;
                         const ctx = canvas.getContext("2d");
                         ctx.drawImage(img, 0, 0);
+    
                         canvas.toBlob(async (pngBlob) => {
                             try {
                                 await navigator.clipboard.write([new ClipboardItem({ [mimeType]: pngBlob })]);
-                                this._successMessage = "Image copied successfully!";
-                                console.log(this._successMessage);
-                                this.notify('Image is copied to clipboard');
+                                console.log("Image copied successfully!");
+                                resolve();
                             } catch (err) {
-                                this._errorMessage = `Failed to copy the image: ${err}`;
-                                console.error(this._errorMessage);
-                                this.notify('Failed to copy!', 'error');
+                                console.error("Failed to copy the image:", err);
+                                reject(err);
                             }
-                            resolve();
                         }, mimeType);
+                    };
+    
+                    img.onerror = (err) => {
+                        console.error("Failed to load the image:", err);
+                        reject(err);
                     };
                 });
             } catch (err) {
-                this._errorMessage = `Failed to fetch or process the image: ${err}`;
-                console.error(this._errorMessage);
+                console.error("Failed to fetch or process the image:", err);
                 try {
                     await navigator.clipboard.writeText(sanitizedUrl);
-                    this._successMessage = "Image URL copied successfully!";
-                    console.log(this._successMessage);
-                    this.history.push({ type: mimeType, content: sanitizedUrl });
-                    this.notify('Image URL is copied to clipboard!');
+                    console.log("Image URL copied successfully!");
                 } catch (err) {
-                    this._errorMessage = `Failed to copy the image URL: ${err}`;
-                    console.error(this._errorMessage);
-                    this.notify('Failed to copy!', 'error');
+                    console.error("Failed to copy the image URL:", err);
                 }
             }
         } else {

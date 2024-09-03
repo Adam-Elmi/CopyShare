@@ -1,12 +1,13 @@
 {
   "name": "copy-share",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "A JavaScript library for copying text, images, videos, links, and code to the clipboard with advanced notification and history management features.",
   "main": "copyShare.js",
   "type": "module",
   "types": "copy-share.d.ts",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "version": "node -p \"require('./package.json').version\""
   },
   "repository": {
     "type": "git",
