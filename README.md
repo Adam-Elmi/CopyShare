@@ -49,4 +49,5 @@ copyCode('console.log("Hello, world!");');
 ```
 
 # Documentation
+- - [API](API.md)
 - [CopyShare Website](https://copy-share-docs.vercel.app)
