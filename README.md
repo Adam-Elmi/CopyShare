@@ -5,6 +5,8 @@ ___
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 ![Version](https://img.shields.io/npm/v/copy-share)
 ![License](https://img.shields.io/npm/l/copy-share)
+![Dependencies](https://img.shields.io/david/Adam-Elmi/CopyShare)
+
 
 
 ## Features
