@@ -165,11 +165,9 @@ class CopyShare {
                             await navigator.clipboard.write([new ClipboardItem({ [mimeType]: pngBlob })]);
                             this._successMessage = "Image copied successfully!";
                             console.log(this._successMessage);
-                            this.notify('Image is copied to clipboard');
                         } catch (err) {
                             this._errorMessage = `Failed to copy the image: ${err}`;
                             console.error(this._errorMessage);
-                            this.notify('Failed to copy!', 'error');
                         }
                         resolve();
                     }, mimeType);
