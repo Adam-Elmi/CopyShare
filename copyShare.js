@@ -326,7 +326,7 @@ class CopyShare {
             text-align: center;
             line-height: 2;
             color: white;
-            font-size: 1px; 
+            font-size: 16px; 
         `;
 
         div.appendChild(notifyElement);
