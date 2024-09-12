@@ -83,7 +83,7 @@ class CopyShare {
                 await navigator.clipboard.writeText(formattedCode);
                 this._successMessage = `Code is copied: ${formattedCode}`;
                 console.log(this._successMessage);
-                this.history.push({ type: 'code', language, content: formattedCode });
+                this.history.push({ type: mimeType, language, content: formattedCode });
                 this.notify('Code is copied to clipboard!');
             } catch (err) {
                 this._errorMessage = `Failed to copy the code text into clipboard: ${err}`;
@@ -100,7 +100,7 @@ class CopyShare {
                 document.execCommand('copy');
                 this._successMessage = `Code is copied: ${formattedCode}`;
                 console.log(this._successMessage);
-                this.history.push({ type: 'code', language, content: formattedCode });
+                this.history.push({ type: mimeType, language, content: formattedCode });
                 this.notify('Code is copied to clipboard!');
             } catch (err) {
                 this._errorMessage = `Failed to copy the code: ${err}`;
