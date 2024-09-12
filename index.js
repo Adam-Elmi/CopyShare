@@ -162,7 +162,7 @@ class CopyShare {
     async copyImage(imageUrl) {
         if (!imageUrl) {
             console.error("The image URL parameter is missing or empty.");
-            this.notify('The image URL parameter is missing or empty.!', 'error');
+            this.notify('The image URL parameter is missing or empty!', 'error');
             return;
         }
         const mimeType = "image/png";
@@ -316,9 +316,8 @@ class CopyShare {
         }
     }
 
-    copyHistory() {
-        console.log(this.history);
-        return this.history;
+    getHistory() {
+        return [...this.history];
     }
 
     copyClear() {

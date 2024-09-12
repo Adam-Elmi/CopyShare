@@ -68,9 +68,9 @@ async function runTests() {
         console.log('_'.repeat(35));
 
 
-    // Test copyHistory method
-    console.log('Test copyHistory:');
-    copyShare.copyHistory(); // logs the history in console so it does not need another console
+    // Test getHistory method
+    console.log('Test getHistory:');
+    console.log('History:', copyShare.getHistory());
     console.log('_'.repeat(35));
 
     // Test copyClear method
