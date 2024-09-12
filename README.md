@@ -76,8 +76,6 @@ You can import the entire library and use the methods via the copyShare object:
 
 import copyShare from 'copy-share';
 
-
-
 copyShare.copyText('Hello, Adam!');
 
 
@@ -91,8 +89,6 @@ Alternatively, you can import specific methods directly:
 ```js
 
 import { copyText, copyCode } from 'copy-share';
-
-
 
 copyText('Hello, Adam!');
 
