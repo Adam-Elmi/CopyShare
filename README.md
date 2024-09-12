@@ -5,14 +5,7 @@ ___
 **CopyShare** is a lightweight JavaScript library that provides easy and versatile clipboard operations. It allows you to copy text, code, images, video URLs, and links to the clipboard, with built-in error handling and history management.
 
 
-
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
-
-![Version](https://img.shields.io/npm/v/copy-share)
-
-[![License](https://img.shields.io/npm/l/copy-share)](LICENSE)
-
-
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md) ![Version](https://img.shields.io/npm/v/copy-share) [![License](https://img.shields.io/npm/l/copy-share)](LICENSE)
 
 
 
