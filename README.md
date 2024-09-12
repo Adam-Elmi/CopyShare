@@ -1,4 +1,4 @@
-![CopyShare Logo](CopyShare.png)
+![CopyShare Logo](/assets/CopyShare.png)
 
 ___
 
