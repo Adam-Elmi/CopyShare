@@ -68,20 +68,22 @@ class CopyShare {
         }
     }
 
-    async copyCode(code) {
+    async copyCode(code, language = '') {
         if (!code) {
             console.error("The code parameter is missing or empty.");
-            this.notify('The code parameter is missing or empty.!', 'error');
+            this.notify('The code parameter is missing or empty!', 'error');
             return;
         }
-        const mimeType = 'text/plain';
+        const mimeType = this.getCodeMimeType(language);
         const sanitizedCode = this.sanitizeText(code);
+        const formattedCode = this.formatCode(sanitizedCode, language);
+        
         if (navigator.clipboard) {
             try {
-                await navigator.clipboard.writeText(sanitizedCode);
-                this._successMessage = `Code is copied: ${sanitizedCode}`;
+                await navigator.clipboard.writeText(formattedCode);
+                this._successMessage = `Code is copied: ${formattedCode}`;
                 console.log(this._successMessage);
-                this.history.push({ type: mimeType, content: sanitizedCode });
+                this.history.push({ type: 'code', language, content: formattedCode });
                 this.notify('Code is copied to clipboard!');
             } catch (err) {
                 this._errorMessage = `Failed to copy the code text into clipboard: ${err}`;
@@ -91,14 +93,14 @@ class CopyShare {
         } else {
             // Fallback
             const textarea = document.createElement('textarea');
-            textarea.value = sanitizedCode;
+            textarea.value = formattedCode;
             document.body.appendChild(textarea);
             textarea.select();
             try {
                 document.execCommand('copy');
-                this._successMessage = `Code is copied: ${sanitizedCode}`;
+                this._successMessage = `Code is copied: ${formattedCode}`;
                 console.log(this._successMessage);
-                this.history.push({ type: mimeType, content: sanitizedCode });
+                this.history.push({ type: 'code', language, content: formattedCode });
                 this.notify('Code is copied to clipboard!');
             } catch (err) {
                 this._errorMessage = `Failed to copy the code: ${err}`;
@@ -107,6 +109,42 @@ class CopyShare {
             }
             document.body.removeChild(textarea);
         }
+    }
+
+    formatCode(code, language) {
+        // Basic formatting: indentation and language comment
+        const indent = '    ';
+        const formattedCode = code.split('\n').map(line => indent + line).join('\n');
+        return `// Language: ${language}\n${formattedCode}`;
+    }
+
+    getCodeMimeType(language) {
+        const mimeTypes = {
+            'javascript': 'application/javascript',
+            'python': 'text/x-python',
+            'html': 'text/html',
+            'css': 'text/css',
+            'json': 'application/json',
+            'xml': 'application/xml',
+            'sql': 'application/sql',
+            'php': 'application/php',
+            'ruby': 'application/ruby',
+            'java': 'application/java',
+            'csharp': 'application/csharp',
+            'typescript': 'application/typescript',
+            'go': 'application/go',
+            'rust': 'application/rust',
+            'kotlin': 'application/kotlin',
+            'swift': 'application/swift',
+            'r': 'application/r',
+            'scala': 'application/scala',
+            'haskell': 'application/haskell',
+            'elixir': 'application/elixir',
+            'erlang': 'application/erlang',
+            'lua': 'application/lua',
+            'perl': 'application/perl',
+        };
+        return mimeTypes[language.toLowerCase()] || 'text/plain';
     }
 
     sanitizeUrl(link) {
@@ -336,6 +374,17 @@ class CopyShare {
         setTimeout(() => {
             document.body.removeChild(div);
         }, 1500);
+    }
+
+    getCodeMimeType(language) {
+        const mimeTypes = {
+            'javascript': 'application/javascript',
+            'python': 'text/x-python',
+            'html': 'text/html',
+            'css': 'text/css',
+            // Add more language-specific MIME types as needed
+        };
+        return mimeTypes[language.toLowerCase()] || 'text/plain';
     }
 };
 
