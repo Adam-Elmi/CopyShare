@@ -103,7 +103,7 @@ import { copyText, copyCode } from 'copy-share';
 
 copyText('Hello, Adam!');
 
-copyCode('console.log("Hello, world!");');
+copyCode('console.log("Hello, world!");', 'javascript');
 
 
 
