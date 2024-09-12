@@ -1,6 +1,6 @@
 {
   "name": "copy-share",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A JavaScript library for copying text, images, videos, links, and code to the clipboard with advanced notification and history management features.",
   "main": "index.js",
   "type": "module",
@@ -11,5 +11,34 @@
   "license": "MIT",
   "dependencies": {
     "jsdom": "^25.0.0"
-  }
+  },
+  "keywords": [
+    "copy",
+    "copy-share",
+    "clipboard",
+    "copy-to-clipboard",
+    "copy-share",
+    "copy-code",
+    "copy-image",
+    "copy-video",
+    "copy-link",
+    "copy-share-js",
+    "copy-share-library",
+    "copy-share-code",
+    "javascript-copy-library",
+    "javascript-clipboard-library",
+    "javascript",
+    "javascript-library"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Adam-Elmi/CopyShare.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Adam-Elmi/CopyShare/issues"
+  },
+  "homepage": "https://github.com/Adam-Elmi/CopyShare#readme",
+  "website": "https://copy-share-docs.vercel.app/"
+  
+
 }
