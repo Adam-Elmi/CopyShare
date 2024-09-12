@@ -10,7 +10,7 @@ class CopyShare {
         this.copyVideoUrl = this.copyVideoUrl.bind(this);
         this.copyCode = this.copyCode.bind(this);
         this.copyLink = this.copyLink.bind(this);
-        this.copyHistory = this.copyHistory.bind(this);
+        this.getHistory = this.getHistory.bind(this);
         this.copyClear = this.copyClear.bind(this);
     }
 
