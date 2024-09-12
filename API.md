@@ -62,19 +62,20 @@ ___
 
 ```js
 
-copyCode(code);
+copyCode(code, language);
 
 ```
 
 - **Parameters**: 
 
     - code (string): The code snippet you want to copy to the clipboard.
+    - language (string): The programming language of the code snippet.
 
 ## Example
 
 ```js
 
-copyCode('console.log("Hello, world!");');
+copyCode('console.log("Hello, world!");', 'javascript');
 
 ```
 
