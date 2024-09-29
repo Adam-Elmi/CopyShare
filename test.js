@@ -5,8 +5,12 @@ import copyShare from './index.js';
 const { window } = new JSDOM('<!DOCTYPE html><p>Hello world</p>');
 global.window = window;
 global.document = window.document;
-global.navigator = window.navigator;
-global.fetch = window.fetch;
+if (!global.navigator) {
+    global.navigator = window.navigator;
+}
+if (!global.fetch) {
+    global.fetch = window.fetch;
+};
 
 // Pretend the Clipboard API
 global.navigator.clipboard = {
