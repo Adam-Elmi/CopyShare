@@ -340,6 +340,7 @@ class CopyShare {
         // Apply inline styles
         div.style.cssText = `
             width: fit-content;
+            min-height: 50px;
             padding: 0 10px;
             background-color: ${colors[type]};
             border-radius: 5px;
@@ -356,7 +357,7 @@ class CopyShare {
             text-align: center;
             line-height: 2;
             color: white;
-            font-size: 10px; 
+            font-size: 1rem; 
         `;
 
         div.appendChild(notifyElement);
