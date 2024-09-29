@@ -75,8 +75,7 @@ class CopyShare {
             return;
         }
         const mimeType = this.getCodeMimeType(language);
-        const sanitizedCode = this.sanitizeText(code);
-        const formattedCode = this.formatCode(sanitizedCode, language);
+        const formattedCode = this.formatCode(code, language);
         
         if (navigator.clipboard) {
             try {
