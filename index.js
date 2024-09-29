@@ -339,6 +339,9 @@ class CopyShare {
 
         // Apply inline styles
         div.style.cssText = `
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: fit-content;
             min-height: 50px;
             padding: 0 10px;
